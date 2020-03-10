@@ -1,20 +1,12 @@
 import React, { Component } from 'react';
 import Home from "./Home";
+import Communities from "../components/Communities"
 import CodeBounty from "./CodeBounty"; 
 import './App.css';
+import AddQuestion from "./AddQuestion"
+import QuestionInfo from "./QuestionInfo"
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom"
-import web3 from "../build/web3"
 class App extends Component {
-
-  async componentWillMount() {
-    await this.loadBlockchainData()
-  }
-
- loadBlockchainData= async ()=> {
-   const accounts = await web3.eth.getAccounts()
-   this.setState({ account: accounts[0] })
-   console.log(accounts)
- }
  
   render() {
     return (  
@@ -22,8 +14,11 @@ class App extends Component {
         <Router>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/codebounty" exact component= {CodeBounty} />
-          </Switch>  
+            <Route path="/codebounty" exact component={CodeBounty} />
+            <Route path="/addQuestion" exact component={AddQuestion} />
+            <Route path="/questionInfo" exact component={QuestionInfo} />
+            <Route path="/communities" exact component={Communities}/>
+           </Switch>  
         </Router>
       </div>
     );

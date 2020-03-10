@@ -1,7 +1,13 @@
-import web3 from './web3'
-import FactoryQuestion from "../abis/factoryQuestion.json";
+import web3 from './web3';
+import factoryQuestion from '../abis/factoryQuestion.json';
 
-const networkId = web3.eth.net.getId();
-console.log(networkId)
-  export default networkId;
-  
+// export default add => {
+//   return new web3.eth.Contract(factoryQuestion.abi, factoryQuestion.networks[5777].address);
+// };
+
+const instance = new web3.eth.Contract(
+  factoryQuestion.abi,
+  factoryQuestion.networks[5777].address
+);
+
+export default instance;

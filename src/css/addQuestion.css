@@ -1,0 +1,7 @@
+.content-wrapper {
+    padding: 16vh 0 50px 0;
+    background: url("../images/homeBG.svg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
